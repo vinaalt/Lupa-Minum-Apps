@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Lupa Minum</string>
+    <string name="avatar">Avatar</string>
+    <string name="name">Vina Lestari</string>
+    <string name="email">vina.10122907@mahasiswa.unikom.ac.id</string>
+
+    <string name="label_identity">Masukkan Nama Kamu</string>
+    <string name="label_hint_input_identity">Ketikkan nama kamu disini</string>
+
+</resources>
