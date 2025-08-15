@@ -51,12 +51,13 @@ class CollectIdentityTempFragment : BottomSheetDialogFragment() {
             viewModel.saveIdentity(identity)
 
             if (viewModel.isIdentitySaved()) {
-                Toast.makeText(requireContext(), "Identity sudah tersimpan", Toast.LENGTH_SHORT).show()
+//                Toast.makeText(requireContext(), "Identity sudah tersimpan", Toast.LENGTH_SHORT).show()
 
                 val intent = Intent(requireContext(), MainActivity::class.java)
                 startActivity(intent)
             } else {
-                Toast.makeText(requireContext(), "Belum ada identity", Toast.LENGTH_SHORT).show()
+//                Toast.makeText(requireContext(), "Belum ada identity", Toast.LENGTH_SHORT).show()
+                Log.d("Info", "Belum ada identity")
             }
         }
     }

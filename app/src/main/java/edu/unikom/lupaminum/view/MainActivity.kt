@@ -74,10 +74,10 @@ class MainActivity : AppCompatActivity() {
                 val coarseGranted = permissions[Manifest.permission.ACCESS_COARSE_LOCATION] ?: false
 
                 if (fineGranted || coarseGranted) {
-                    Toast.makeText(this, "GPS Permission Granted", Toast.LENGTH_SHORT).show()
+//                    Toast.makeText(this, "GPS Permission Granted", Toast.LENGTH_SHORT).show()
                     content()
                 } else {
-                    Toast.makeText(this, "GPS Permission Denied", Toast.LENGTH_SHORT).show()
+//                    Toast.makeText(this, "GPS Permission Denied", Toast.LENGTH_SHORT).show()
                     uiWithoutGPSAccess()
                 }
             }
@@ -108,7 +108,7 @@ class MainActivity : AppCompatActivity() {
             val units = "imperial"
             viewModel.fetchWeather(lat.toString(), lon.toString(), appid, units)
 
-            Toast.makeText(this, "Lat: $lat, Lon: $lon", Toast.LENGTH_LONG).show()
+//            Toast.makeText(this, "Lat: $lat, Lon: $lon", Toast.LENGTH_LONG).show()
             Log.d("LATLONG", "$lat, $lon")
         }
 

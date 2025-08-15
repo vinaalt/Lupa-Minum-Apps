@@ -46,7 +46,7 @@ class ScheduleSettingFragment : Fragment() {
         }
 
         binding.btnSimpanSchedule.setOnClickListener {
-            Toast.makeText(requireContext(), "TERCLICK", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(requireContext(), "TERCLICK", Toast.LENGTH_SHORT).show()
 
             val selectedId = binding.radioGroupOptions.checkedRadioButtonId
 
@@ -57,18 +57,18 @@ class ScheduleSettingFragment : Fragment() {
                 } else {
                     selectedRadioButton.tag?.toString() ?: selectedRadioButton.text.toString()
                 }
-                Toast.makeText(requireContext(), "${value}", Toast.LENGTH_SHORT).show()
+//                Toast.makeText(requireContext(), "${value}", Toast.LENGTH_SHORT).show()
 
                 viewModel.saveSchedule(value)
 
-                Toast.makeText(requireContext(), "BEHASIL SAMPAI SINI", Toast.LENGTH_SHORT).show()
-                Toast.makeText(requireContext(), "${viewModel.isScheduleSaved()}", Toast.LENGTH_SHORT).show()
-                Toast.makeText(requireContext(), "${viewModel.getSchedule()}", Toast.LENGTH_SHORT).show()
+//                Toast.makeText(requireContext(), "BEHASIL SAMPAI SINI", Toast.LENGTH_SHORT).show()
+//                Toast.makeText(requireContext(), "${viewModel.isScheduleSaved()}", Toast.LENGTH_SHORT).show()
+//                Toast.makeText(requireContext(), "${viewModel.getSchedule()}", Toast.LENGTH_SHORT).show()
 
                 if (viewModel.isScheduleSaved()) {
                     val scheduleValue = viewModel.getSchedule()?.time?.toLong()
                     if (scheduleValue != null) {
-                        Toast.makeText(requireContext(), "Value saved", Toast.LENGTH_SHORT).show()
+//                        Toast.makeText(requireContext(), "Value saved", Toast.LENGTH_SHORT).show()
 
                         PermissionAndLocation.getCurrentLocation(fusedLocationClient) { lat, lon ->
                             val appid = "2469d458b7ad46b9632c1497d5c2d9a2"
@@ -91,11 +91,12 @@ class ScheduleSettingFragment : Fragment() {
                                     Log.d("WEATHER", "Failed to fetch weather")
                                 }
                             }
-                            Toast.makeText(requireContext(), "Lat: $lat, Lon: $lon", Toast.LENGTH_LONG).show()
+//                            Toast.makeText(requireContext(), "Lat: $lat, Lon: $lon", Toast.LENGTH_LONG).show()
                             Log.d("LATLONG", "$lat, $lon")
                         }
                     } else {
-                        Toast.makeText(requireContext(), "Waktu tidak tersedia", Toast.LENGTH_SHORT).show()
+//                        Toast.makeText(requireContext(), "Waktu tidak tersedia", Toast.LENGTH_SHORT).show()
+                        Log.d("INFO", "Waktu tidak tersedia")
                     }
                 }
             } else {

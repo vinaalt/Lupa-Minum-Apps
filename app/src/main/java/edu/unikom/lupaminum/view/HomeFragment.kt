@@ -95,7 +95,7 @@ class HomeFragment : Fragment() {
                 val coarseGranted = permissions[Manifest.permission.ACCESS_COARSE_LOCATION] ?: false
 
                 if (fineGranted || coarseGranted) {
-                    Toast.makeText(requireContext(), "GPS Permission Granted", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "Ijin GPS Diberikan", Toast.LENGTH_SHORT).show()
                     // lakukan sesuatu kalau permission granted
                 } else {
                     // kalau ditolak
@@ -103,7 +103,7 @@ class HomeFragment : Fragment() {
                         // user centang "Don't ask again"
                         showGoToSettingsDialog(this)
                     } else {
-                        Toast.makeText(requireContext(), "GPS Permission Denied", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireContext(), "Ijin GPS tidak diberikan", Toast.LENGTH_SHORT).show()
                     }
                 }
             }
@@ -113,7 +113,7 @@ class HomeFragment : Fragment() {
         val context = fragment.requireContext()
 
         if (PermissionAndLocation.hasLocationPermission(context)) {
-            Toast.makeText(context, "GPS Permission Already Granted", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "GPS Telah Aktif", Toast.LENGTH_SHORT).show()
 
             loadFragment(ScheduleSettingFragment())
         } else {
