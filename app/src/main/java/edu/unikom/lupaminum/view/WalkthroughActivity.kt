@@ -22,9 +22,9 @@ class WalkthroughActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val imageList = listOf(
-            R.drawable.img_splashscreen,
-            R.drawable.img_splashscreen,
-            R.drawable.img_splashscreen
+            R.drawable.img_wk_1,
+            R.drawable.img_wk_2,
+            R.drawable.img_wk_3
         )
 
         val adapter = WalkthroughAdapter(this, imageList)

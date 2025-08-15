@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context=".view.HomeFragment">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_margin="24dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="#000000"
+            android:paddingTop="24dp"
+            android:paddingBottom="14dp">
+
+            <TextView
+                android:id="@+id/txt_sapa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lunasima"
+                android:paddingBottom="5dp"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/txt_desc_identity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_sapa"
+                android:fontFamily="@font/lunasima"
+                android:paddingBottom="30dp"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:visibility="gone"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardAlarm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_below="@id/txt_desc_identity"
+                android:visibility="gone"
+                app:cardBackgroundColor="#9ED1E3"
+                app:cardCornerRadius="8dp">
+
+                <TextView
+                    android:id="@+id/alarm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txt_desc_identity"
+                    android:fontFamily="@font/lunasima"
+                    android:padding="10dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="#9ED1E3"
+                    android:textColor="#1F6B86"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:visibility="visible"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/txt_ttl_schedule_first_row"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cardAlarm"
+                android:fontFamily="@font/lunasima"
+                android:layout_marginTop="30dp"
+                android:paddingBottom="5dp"
+                android:text="@string/label_hint_input_identity_first_row"
+                android:layout_centerHorizontal="true"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:visibility="visible"/>
+
+            <TextView
+                android:id="@+id/txt_ttl_schedule_scnd_row"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_ttl_schedule_first_row"
+                android:fontFamily="@font/lunasima"
+                android:paddingBottom="20dp"
+                android:text="@string/label_hint_input_identity_second_row"
+                android:layout_centerHorizontal="true"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:visibility="visible"/>
+
+            <TextView
+                android:id="@+id/txt_desc_schedule"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_ttl_schedule_scnd_row"
+                android:fontFamily="@font/lunasima"
+                android:paddingBottom="10dp"
+                android:text="Klik untuk atur jadwal"
+                android:layout_centerHorizontal="true"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:visibility="visible"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/btn_schedule"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/txt_desc_schedule"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/btn_schedule"
+                android:clipToOutline="true"
+                android:scaleType="centerCrop"
+                android:layout_alignParentStart="true"
+                android:layout_marginEnd="15dp"/>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</FrameLayout>

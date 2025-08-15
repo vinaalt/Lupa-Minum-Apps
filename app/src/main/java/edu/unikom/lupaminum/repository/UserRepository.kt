@@ -9,11 +9,13 @@ import javax.inject.Singleton
 class UserRepository @Inject constructor() {
     private var identity: Identity? = null
 
-    fun saveIdentity(id: String) {
-        identity = Identity(id)
+    fun saveIdentity(name: String) {
+        identity = Identity(name)
     }
 
     fun getIdentity(): Identity? = identity
 
     fun isIdentitySaved(): Boolean = identity != null
+
+
 }

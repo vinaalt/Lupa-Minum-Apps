@@ -15,17 +15,4 @@
         android:layout_height="match_parent"
         android:layout_weight="1" >
     </FrameLayout>
-
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:elevation="4dp"
-        android:background="#000000"
-        app:menu="@menu/bottom_nav_menu"
-        app:itemRippleColor="@android:color/transparent"
-        app:itemIconTint="@color/nav_item_icon_color"
-        app:labelVisibilityMode="unlabeled"/>
-
 </LinearLayout>

@@ -8,7 +8,9 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import edu.unikom.lupaminum.model.DataItem
 import edu.unikom.lupaminum.model.Identity
+import edu.unikom.lupaminum.model.Schedule
 import edu.unikom.lupaminum.model.WeatherResponse
+import edu.unikom.lupaminum.repository.ScheduleRepository
 import edu.unikom.lupaminum.repository.UserRepository
 import edu.unikom.lupaminum.repository.WeatherRepository
 import kotlinx.coroutines.launch
@@ -17,7 +19,8 @@ import javax.inject.Inject
 @HiltViewModel
 class UserViewModel @Inject constructor(
     private val userRepository: UserRepository,
-    private val weatherRepository: WeatherRepository //1. Hei Hilt! aku butuh UserRepository dong di ViewModel ini.
+    private val weatherRepository: WeatherRepository, //1. Hei Hilt! aku butuh UserRepository dong di ViewModel ini.
+    private val scheduleRepository: ScheduleRepository
 ) : ViewModel() {
     val weatherData = MutableLiveData<WeatherResponse>()
 
@@ -33,14 +36,28 @@ class UserViewModel @Inject constructor(
         return userRepository.getIdentity()
     }
 
+    fun saveSchedule(schedule: String) {
+        scheduleRepository.saveSchedule(schedule)
+    }
+
+    fun isScheduleSaved(): Boolean {
+        return scheduleRepository.isScheduleSaved()
+    }
+
+    fun getSchedule(): Schedule? {
+        return scheduleRepository.getSchedule()
+    }
+
     fun fetchWeather(lat: String, long: String, appid: String, units: String) {
         viewModelScope.launch {
             try {
-                val result = weatherRepository.getWeather(lat,long,appid,units)
+                val result = weatherRepository.getWeather(lat, long, appid, units)
+                Log.d("CEK DULU YA", "$result")
+
                 result?.let {
-                    weatherData.postValue(it)
+                    weatherData.postValue(it) // kirim ke observer
+                    Log.d("WeatherViewModel", "Fetched: $it")
                 }
-                Log.d("WeatherViewModel", "${result}")
             } catch (e: Exception) {
                 Log.e("WeatherViewModel", e.message ?: "Unknown error")
             }

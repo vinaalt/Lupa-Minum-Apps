@@ -7,4 +7,10 @@
     <string name="label_identity">Masukkan Nama Kamu</string>
     <string name="label_hint_input_identity">Ketikkan nama kamu disini</string>
 
+    <string name="label_hint_input_identity_first_row">PENGINGAT</string>
+    <string name="label_hint_input_identity_second_row">MINUM AIR</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
 </resources>
